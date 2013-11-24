@@ -16,7 +16,7 @@ Run the rails server
 Implementation
 =======
 This is a simple rails app, with a pair of resources, Doctors and Patients.  Each doctor has many patients.  Each patient has many doctors.  The Doctors and Patients are connected through Appointments they share.
-  > rails _3.2.15_ new DoctorPatientTracker --skip-test-unit
+  > rails \_3.2.15\_ new DoctorPatientTracker --skip-test-unit
 
   > cd DoctorPatientTracker
 
