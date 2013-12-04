@@ -14,6 +14,14 @@
     <td><%= link_to 'Show', doctor %></td>
     <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
     <td><%= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% doctor.patients.each do |patient| %>
+      <tr id="<%= patient.id %>">
+        <td></td>
+        <td><%= patient.name %></td>
+      </tr>
+    <% end %>
+
   </tr>
 <% end %>
 </table>

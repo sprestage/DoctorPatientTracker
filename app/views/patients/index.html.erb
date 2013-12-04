@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Appointments</th>
     <th></th>
     <th></th>
   </tr>
@@ -14,10 +14,20 @@
     <td><%= link_to 'Show', patient %></td>
     <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
     <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% patient.doctors.each do |doctor| %>
+      <tr id="<%= doctor.id %>">
+        <td></td>
+        <td><%= doctor.name %></td>
+      </tr>
+    <% end %>
+
+    <td><%= link_to 'Create appointment', new_appointment_path %></td>
+
   </tr>
 <% end %>
-</table>
 
+</table>
 <br />
 
 <%= link_to 'New Patient', new_patient_path %>

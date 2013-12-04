@@ -2,6 +2,8 @@ class DoctorsController < ApplicationController
   # GET /doctors
   # GET /doctors.json
   def index
+    # patient = Patient.find(params[:patient_id])
+    # @doctors = patient.doctors
     @doctors = Doctor.all
 
     respond_to do |format|
@@ -13,6 +15,8 @@ class DoctorsController < ApplicationController
   # GET /doctors/1
   # GET /doctors/1.json
   def show
+    # patient = Patient.find(params[:patient_id])
+    # @doctor = patient.doctors.find(params[:id])
     @doctor = Doctor.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +28,8 @@ class DoctorsController < ApplicationController
   # GET /doctors/new
   # GET /doctors/new.json
   def new
+    # patient = Patient.find(params[:patient_id])
+    # @doctor = patient.doctors.build
     @doctor = Doctor.new
 
     respond_to do |format|
@@ -34,6 +40,8 @@ class DoctorsController < ApplicationController
 
   # GET /doctors/1/edit
   def edit
+    # patient = Patient.find(params[:patient_id])
+    # @doctor = patient.items.find(params[:id])
     @doctor = Doctor.find(params[:id])
   end
 

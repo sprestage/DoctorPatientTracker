@@ -82,3 +82,18 @@ Edit all the 5 /views/patients/*.html.erb to display the fields from the models.
 
 Tests all green?  Time to implement...THE ASSIGNMENT
 
+Ahhhh.  I need the third resource that doctors and patients all associate through: Appointments!
+  > rails g scaffold Appointment day_and_time:datetime --no-test-framework --no-assets --no-stylesheets --no-scss
+
+Skipping TDD for now.  Checking BDD.  Looks good, but...need to have doctors and patients be
+included in the create/update/show/delete appointment pages.
+
+/views/doctors/_form.html.erb
+<div> class="field">
+  <% Patient.all.each do |patient| %>
+    <%= check_box_tag "doctor[patient_ids][]", patient.id %>
+    <%= patient.name %><br/>
+  <% end %>
+</div>
+
+

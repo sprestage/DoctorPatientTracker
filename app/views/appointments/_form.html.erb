@@ -1,0 +1,24 @@
+<%= form_for(@appointment) do |f| %>
+  <% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day_and_time %><br />
+    <%= f.datetime_select :day_and_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<!-- NOTE: Thank you RailsCast #17revised for getting me through this syntax.  I'm not satisfied with the syntax yet, because I think the radio buttons would be the better choice in my choice of application.  -sprestage 10/30/13 -->
+
+<% end %>
