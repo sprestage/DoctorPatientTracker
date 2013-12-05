@@ -15,7 +15,13 @@ Run the rails server
 
 Implementation
 =======
-This is a simple rails app, with a pair of resources, Doctors and Patients.  Each doctor has many patients.  Each patient has many doctors.  The Doctors and Patients are connected through Appointments they share.
+This section is quite boring and pedantic.  I've written it out because
+that was part of my learning process and I find it useful to refer back
+to, so feel free to skip.
+
+This is a simple rails app, with a pair of resources, Doctors and Patients.
+Each doctor has many patients.  Each patient has many doctors.  The Doctors
+and Patients are connected through Appointments they share.
   > rails \_3.2.15\_ new DoctorPatientTracker --skip-test-unit
 
   > cd DoctorPatientTracker
@@ -38,7 +44,8 @@ Create the scaffold for the new resource, Doctor.
 Migrate the database to pick up the changes.
   > rake db:migrate
 
-I know I should probably create all the tests first, but I feel so lost without the stuff there first, ya know.
+I know I should probably create all the tests first, but I feel so lost
+without the stuff there first, ya know.
 
 Create the tests using generate, then completely replace what is in the files.
   > rails g mini_test:feature DoctorShowIndex
@@ -51,11 +58,13 @@ Create the tests using generate, then completely replace what is in the files.
 
   > rails g mini_test:feature DoctorDelete
 
-Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then add fixture support to /test/test_helper.rb
+Add /test/ folder.  Add /test/doctors/ folder.  Move doctor tests. Then
+add fixture support to /test/test_helper.rb
 
 Add Doctor name to display on /doctors/new page
 
-Edit all the 5 /views/doctors/*.html.erb to display the fields from the models.
+Edit all the 5 /views/doctors/*.html.erb to display the fields from the
+models.
 
 Ok, all Doctor stuff works. Time to implement Patients:
   > rails g scaffold Patient name:string --no-test-framework --no-assets --no-stylesheets --no-scss
@@ -78,15 +87,17 @@ Add Patients to the DB:
 
 Add Patient name to display on /patients/new page
 
-Edit all the 5 /views/patients/*.html.erb to display the fields from the models.
+Edit all the 5 /views/patients/*.html.erb to display the fields from the
+models.
 
 Tests all green?  Time to implement...THE ASSIGNMENT
 
 Ahhhh.  I need the third resource that doctors and patients all associate through: Appointments!
   > rails g scaffold Appointment day_and_time:datetime --no-test-framework --no-assets --no-stylesheets --no-scss
 
-Skipping TDD for now.  Checking BDD.  Looks good, but...need to have doctors and patients be
-included in the create/update/show/delete appointment pages.
+Skipping TDD for now.  Checking BDD.  Looks good, but...need to have
+doctors and patients be included in the create/update/show/delete
+appointment pages.
 
 /views/doctors/_form.html.erb
 <div> class="field">
