@@ -136,8 +136,7 @@ need to add one of patients, since this is the New Appointment page.
 Ok, now edit the appointments_controller, right?
 
 Modified the create and update methods in the appointments_controller.
-This should all be configured correctly.  Sadly, it still doesn't work.
+This should all be configured correctly.
 
-I'll pair with Nathaniel shortly and see where we can get.  Tucking
-this on the backburner for now.
-
+Needed to correct some parameters and get my hashing right.  It all
+works now.  Yeay!!!
