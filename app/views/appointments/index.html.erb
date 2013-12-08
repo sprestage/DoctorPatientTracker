@@ -3,7 +3,7 @@
 
 <table>
   <tr>
-    <th>Day and time</th>
+    <th>Day and time of appointment</th>
     <th>Doctor</th>
     <th>Patient</th>
     <th></th>
@@ -11,7 +11,7 @@
 
 <% @appointments.each do |appointment| %>
   <tr>
-    <td><%= appointment.day_and_time %></td>
+    <td><%= appointment.day_and_time.to_s(:appointment_time) %></td>
     <td><%= appointment.doctor.name %></td>
     <td><%= appointment.patient.name %></td>
     <td><%= link_to 'Show', appointment %></td>

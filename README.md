@@ -1,4 +1,4 @@
-Ment or Ship
+DoctorPatientTracker (aka Ment or Ship)
 =======
 
 This is an app that demonstrates the use of the has_many :through association.  A Doctor resource and a Patient resource will be used here.  These resources would be connected through Appointment relationships.
@@ -140,3 +140,18 @@ This should all be configured correctly.
 
 Needed to correct some parameters and get my hashing right.  It all
 works now.  Yeay!!!
+
+
+Time formatting
+=======
+
+The appointments index had a terrible format to the date and really wanted
+to be corrected.  RailsCast #31 was used as a starting point.  Also used:
+<pre>
+  ri strftime
+</pre>
+
+Here is a picture of the improvement...
+
+![Image](https://s3-us-west-2.amazonaws.com/sprestage/DoctorPatientTracker_date_formatting.png?raw=true)
+
