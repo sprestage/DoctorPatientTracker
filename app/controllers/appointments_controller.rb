@@ -40,10 +40,9 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    # doctor = Doctor.find(params[:doctor_id])
-    # patient = Patient.find(params[:patient_id])
-    # @appointment = patient.appointments.create(params[:appointment])
-    @appointment = Appointment.new(appointment_params)
+    doctor = Doctor.find(params[:appointment][:doctor_id])
+    patient = Patient.find(params[:appointment][:patient_id])
+    @appointment = patient.appointments.create(params[:appointment])
 
     respond_to do |format|
       if @appointment.save
@@ -62,7 +61,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
 
     respond_to do |format|
-      if @appointment.update_attributes(appointment_params)
+      if @appointment.update_attributes(params[:appointment])
         format.html { redirect_to @appointment, notice: 'Appointment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -83,10 +82,5 @@ class AppointmentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
-    def appointment_params
-      params.require(:appointment).permit(:day_and_time, :doctor_id, :patient_id)
-    end
 
 end

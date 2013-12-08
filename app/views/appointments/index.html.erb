@@ -4,14 +4,16 @@
 <table>
   <tr>
     <th>Day and time</th>
-    <th></th>
-    <th></th>
+    <th>Doctor</th>
+    <th>Patient</th>
     <th></th>
   </tr>
 
 <% @appointments.each do |appointment| %>
   <tr>
     <td><%= appointment.day_and_time %></td>
+    <td><%= appointment.doctor.name %></td>
+    <td><%= appointment.patient.name %></td>
     <td><%= link_to 'Show', appointment %></td>
     <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
     <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
