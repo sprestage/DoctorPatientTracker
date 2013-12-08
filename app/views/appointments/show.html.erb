@@ -2,8 +2,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Day and time:</b>
+  <b>Day and time</b>
   <%= @appointment.day_and_time %>
+</p>
+
+<p>
+  <b>Doctor</b>
+  <%= @appointment.doctor.name %>
+</p>
+
+<p>
+  <b>Patient</b>
+  <%= @appointment.patient.name %>
 </p>
 
 

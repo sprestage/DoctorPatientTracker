@@ -15,10 +15,23 @@
     <%= f.label :day_and_time %><br />
     <%= f.datetime_select :day_and_time %>
   </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :doctor_id %><br>
+    <%= f.select("doctor_id", Doctor.all.collect {|d| [ d.name, d.id ] }, {include_blank: '-- Select Doctor If Present --'}) %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.label :patient_id %><br>
+    <%= f.select("patient_id", Patient.all.collect {|p| [ p.name, p.id ] }, {include_blank: '-- Select Patient If Present --'}) %>
+  </div>
+  <br>
+  <br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
-
-<!-- NOTE: Thank you RailsCast #17revised for getting me through this syntax.  I'm not satisfied with the syntax yet, because I think the radio buttons would be the better choice in my choice of application.  -sprestage 10/30/13 -->
 
 <% end %>
