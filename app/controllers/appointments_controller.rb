@@ -40,7 +40,6 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    binding.pry
     # doctor = Doctor.find(params[:doctor_id])
     # patient = Patient.find(params[:patient_id])
     # @appointment = patient.appointments.create(params[:appointment])
