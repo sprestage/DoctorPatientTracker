@@ -3,6 +3,8 @@ DoctorPatientTracker (aka Ment or Ship)
 
 This is an app that demonstrates the use of the has_many :through association.  A Doctor resource and a Patient resource will be used here.  These resources would be connected through Appointment relationships.
 
+[![Code Climate](https://codeclimate.com/github/sprestage/DoctorPatientTracker.png)](https://codeclimate.com/github/sprestage/DoctorPatientTracker)
+
 
 Basic Install
 =======
